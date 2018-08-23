@@ -13,7 +13,7 @@ jobs:
       - image: hirvijo/robot:1.1
     steps:
       - checkout
-      - run: robot --variable APP:$CIRCLE_ARTIFACTS/app-to-test .
+      - run: robot --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
     requires:
       - build
 workflows:
