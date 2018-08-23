@@ -37,7 +37,7 @@ One plus One equals Two (Improved)
 
 *** Keywords ***
 I open the calculator
-	Open Application  ${HUB}  platformName=Android  platformVersion=7.0  deviceName=Honor_8_Lite  app=https://github.com/Hilvio/circleci-robot-appium/blob/master/calculator-release.apk  automationName=appium  appPackage=com.simplemobiletools.calculator  appActivity=.activities.SplashActivity
+	Open Application  ${HUB}  platformName=Android  platformVersion=7.0  deviceName=Honor_8_Lite  app=${APP}  automationName=appium  appPackage=com.simplemobiletools.calculator  appActivity=.activities.SplashActivity
 	
 I enter ${first_number} plus ${second_number}
     Click Element  ${BUTTON}${first_number}
