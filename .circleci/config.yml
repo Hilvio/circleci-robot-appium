@@ -14,6 +14,8 @@ jobs:
     steps:
       - checkout
       - run: robot --variable APP:$CIRCLE_ARTIFACTS/app-to-test .
+    requires:
+      - build
 workflows:
   version: 2
   build_and_test:
