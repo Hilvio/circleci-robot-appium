@@ -7,13 +7,13 @@ jobs:
       - checkout
       - store_artifacts:
             path: calculator-release.apk
-            destination: artifact-file
+            destination: app-to-test
   test:
     docker:
       - image: hirvijo/robot:1.1
     steps:
       - checkout
-      - run: robot .
+      - run: robot --variable APP:$CIRCLE_ARTIFACTS/app-to-test .
 workflows:
   version: 2
   build_and_test:
