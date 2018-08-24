@@ -5,7 +5,9 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
+      - run: cp calculator-release.apk tmp
       - persist_to_workspace:
+            root: tmp
             paths: calculator-release.apk
       - store_artifacts:
             path: calculator-release.apk
