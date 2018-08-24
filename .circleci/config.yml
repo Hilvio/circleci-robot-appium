@@ -5,11 +5,6 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: mkdir -p workspace  
-      - run: cp calculator-release.apk workspace
-      - persist_to_workspace:
-            root: workspace
-            paths: calculator-release.apk
       - store_artifacts:
             path: calculator-release.apk
             destination: app-to-test
@@ -18,7 +13,6 @@ jobs:
       - image: hirvijo/robot:1.1
     steps:
       - checkout
-      - run: echo THIS IS IT $CIRCLE_BUILD_URL
       - run: robot --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
     requires:
       - build
