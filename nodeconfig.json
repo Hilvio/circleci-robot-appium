@@ -1,0 +1,22 @@
+{
+  "capabilities":
+      [
+        {
+          "browserName": "Honor_8_Lite",
+          "version":"7.0",
+          "maxInstances": 1,
+          "platform":"android"
+        }
+      ],
+  "configuration":
+  {
+    "cleanUpCycle":2000,
+    "timeout":30000,
+    "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "maxSession": 1,
+    "register": true,
+    "registerCycle": 5000,
+    "hubPort": 4444,
+    "hubHost": "localhost"
+  }
+}
