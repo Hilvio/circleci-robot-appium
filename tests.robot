@@ -1,4 +1,5 @@
 *** Settings ***
+# test
 Library         AppiumLibrary
 
 Test setup  I open the calculator
