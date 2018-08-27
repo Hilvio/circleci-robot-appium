@@ -29,3 +29,13 @@ workflows:
       - test:
           requires:
               - hold
+  nightly:
+    triggers:
+      - schedule:
+        cron: "*/15 * * * *"
+        filters:
+          branches:
+            only:
+              - master
+    jobs:
+      - test
