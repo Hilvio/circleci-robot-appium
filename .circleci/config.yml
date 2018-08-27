@@ -29,6 +29,11 @@ workflows:
       - test:
           requires:
             - hold
+  nightly:
+    jobs:
+      - test:
+          requires:
+            - hold
     triggers:
       - schedule:
           cron: "0,15,30,45 * * * *"
