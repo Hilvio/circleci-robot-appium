@@ -25,13 +25,14 @@ workflows:
       - hold:
           type: approval
           requires:
-              - build
+            - build
       - test:
           requires:
-              - hold
+            - hold
     triggers:
       - schedule:
-          cron: "15 * * * *"
+          cron: "0 0 * * *"
           filters:
             branches:
-              only: master
+              only: 
+                - master
