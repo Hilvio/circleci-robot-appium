@@ -31,7 +31,7 @@ workflows:
             - hold
     triggers:
       - schedule:
-          cron: "5 * * * *"
+          cron: "10 * * * *"
           filters:
             branches:
               only: 
