@@ -34,5 +34,4 @@ workflows:
           cron: "15 * * * *"
           filters:
             branches:
-              only:
-                - master
+              only: master
