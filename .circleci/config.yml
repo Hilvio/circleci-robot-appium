@@ -13,12 +13,15 @@ jobs:
       - image: hirvijo/robot:1.1
     steps:
       - checkout
-      - run: robot --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
-    requires:
-      - build
+      - run: robot -d tmp/report --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
+      - store_artifacts:
+            path: tmp/report
+            destination: report
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
       - test
+          requires:
+            - build
