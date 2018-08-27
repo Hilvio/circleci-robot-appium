@@ -19,7 +19,7 @@ jobs:
             destination: report
 workflows:
   version: 2
-  build_and_test:
+  commit:
     jobs:
       - build
       - hold:
@@ -32,7 +32,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-        cron: "*/15 * * * *"
+        cron: "15 * * * *"
           filters:
             branches:
               only:
