@@ -19,13 +19,13 @@ jobs:
             destination: report
 workflows:
   version: 2
-  nightly:
-    triggers:
-      - schedule:
-        cron: "15 * * * *"
-          filters:
-            branches:
-              only:
-                - master
+  commit:
     jobs:
-      - test
+      - build
+      - hold:
+          type: approval
+          requires:
+              - build
+      - test:
+          requires:
+              - hold
