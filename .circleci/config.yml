@@ -19,16 +19,6 @@ jobs:
             destination: report
 workflows:
   version: 2
-  commit:
-    jobs:
-      - build
-      - hold:
-          type: approval
-          requires:
-              - build
-      - test:
-          requires:
-              - hold
   nightly:
     triggers:
       - schedule:
