@@ -31,4 +31,4 @@ workflows:
               - hold
     triggers:
       - schedule:
-        cron: "15 * * * *"
+          cron: "15 * * * *"
