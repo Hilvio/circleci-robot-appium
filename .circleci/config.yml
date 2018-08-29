@@ -14,7 +14,6 @@ jobs:
     steps:
       - checkout
       - run: robot -d tmp/report --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
-            no_output_timeout: 5m
       - store_artifacts:
             path: tmp/report
             destination: report
