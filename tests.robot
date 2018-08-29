@@ -12,7 +12,7 @@ ${BUTTON_PLUS}    id=com.simplemobiletools.calculator:id/btn_plus
 ${BUTTON_EQUALS}    id=com.simplemobiletools.calculator:id/btn_equals
 ${LABEL_RESULT}    id=com.simplemobiletools.calculator:id/result
 
-${HUB}  https://a2fd0561.ngrok.io/wd/hub
+${HUB}  https://b88f736c.ngrok.io/wd/hub
 
 *** Test Cases ***
 One plus One equals Two
