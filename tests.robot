@@ -39,7 +39,7 @@ One plus One equals Two
 	Click Element  ${BUTTON_PLUS}
 	Click Element  ${BUTTON_1}
 	Click Element  ${BUTTON_EQUALS}
-	Sleep  120s
+	Sleep  240s
 	
 	# Verify output
         Element Text Should Be  ${LABEL_RESULT}  2
