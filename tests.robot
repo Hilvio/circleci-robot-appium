@@ -3,7 +3,7 @@
 Library         AppiumLibrary
 
 Test setup  I open the calculator
-Test teardown  Close All Applications
+#Test teardown  Close All Applications
 
 *** Variables ***
 ${BUTTON}    id=com.simplemobiletools.calculator:id/btn_
