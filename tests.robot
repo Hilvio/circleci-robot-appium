@@ -27,14 +27,28 @@ One plus One equals Two
 	Click Element  ${BUTTON_EQUALS}
 	
 	# Verify output
-    Element Text Should Be  ${LABEL_RESULT}  2
+        Element Text Should Be  ${LABEL_RESULT}  2
+
+One plus One equals Two
+	
+	# Start the calculator
+	Wait Until Element Is Visible  id=com.simplemobiletools.calculator:id/result
+	
+	# Perform actions	
+	Click Element  ${BUTTON_1}
+	Click Element  ${BUTTON_PLUS}
+	Click Element  ${BUTTON_1}
+	Click Element  ${BUTTON_EQUALS}
+	Sleep  120s
+	
+	# Verify output
+        Element Text Should Be  ${LABEL_RESULT}  2
 	
 	
 One plus One equals Two (Improved)
 
     When I enter 1 plus 1
     Then I see result 2
-
 
 *** Keywords ***
 I open the calculator
