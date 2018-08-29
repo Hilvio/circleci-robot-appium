@@ -28,22 +28,6 @@ One plus One equals Two
 	
 	# Verify output
         Element Text Should Be  ${LABEL_RESULT}  2
-
-One plus One equals Two
-	
-	# Start the calculator
-	Wait Until Element Is Visible  id=com.simplemobiletools.calculator:id/result
-	
-	# Perform actions	
-	Click Element  ${BUTTON_1}
-	Click Element  ${BUTTON_PLUS}
-	Click Element  ${BUTTON_1}
-	Click Element  ${BUTTON_EQUALS}
-	Sleep  240s
-	
-	# Verify output
-        Element Text Should Be  ${LABEL_RESULT}  2
-	
 	
 One plus One equals Two (Improved)
 
