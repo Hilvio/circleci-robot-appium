@@ -9,7 +9,7 @@ jobs:
             path: calculator-release.apk
             destination: app-to-test
       - run: mkdir -p workspace
-      - run: echo $CIRCLE_BUILD_URL > workspace/echo-output
+      - run: echo $CIRCLE_WORKFLOW_ID > workspace/echo-output
       - persist_to_workspace:
           root: workspace
           paths:
