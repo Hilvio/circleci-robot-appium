@@ -29,7 +29,7 @@ jobs:
           command: echo 'export BUILD_NUMBER=$(cat /tmp/workspace/echo-output)' >> $BASH_ENV
       - run: 
           name: Run tests
-          command: robot -d tmp/report --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
+          command: robot -d tmp/report .
           environment:
             HUB: https://f2f2850c.ngrok.io/wd/hub
       - store_artifacts:
