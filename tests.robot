@@ -28,6 +28,7 @@ One plus One equals Two
 	Click Element  ${BUTTON_EQUALS}
 	
 	# Verify output
+	Capture Page Screenshot
         Element Text Should Be  ${LABEL_RESULT}  2
 	
 One plus One equals Two (Improved)
