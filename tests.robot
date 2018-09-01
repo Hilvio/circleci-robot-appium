@@ -40,6 +40,7 @@ I open the calculator
         Log to console  \n
         Log to console  HUB: ${HUB}
 	Log to console  APP: ${APP}
+	Log to console  \n
 	Open Application  ${HUB}  platformName=Android  platformVersion=7.0  deviceName=Honor_8_Lite  app=${APP}  automationName=appium  appPackage=com.simplemobiletools.calculator  appActivity=.activities.SplashActivity
 	
 I enter ${first_number} plus ${second_number}
