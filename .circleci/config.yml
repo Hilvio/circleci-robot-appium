@@ -22,11 +22,10 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: 
-          name: Read build number from file
-          command: cat /tmp/workspace/echo-output
-      - run:
-          name: Define environment variable BUILD_NUMBER
-          command: echo 'export BUILD_NUMBER=$(cat /tmp/workspace/echo-output)' >> $BASH_ENV
+          name: Read file and set as environment variable BUILD_NUMBER
+          command: |
+            cat /tmp/workspace/echo-output
+            echo 'export BUILD_NUMBER=$(cat /tmp/workspace/echo-output)' >> $BASH_ENV
       - run: 
           name: Run tests
           command: robot -d tmp/report .
