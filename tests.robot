@@ -12,7 +12,7 @@ ${BUTTON_PLUS}    id=com.simplemobiletools.calculator:id/btn_plus
 ${BUTTON_EQUALS}    id=com.simplemobiletools.calculator:id/btn_equals
 ${LABEL_RESULT}    id=com.simplemobiletools.calculator:id/result
 
-${APP}  https://%{BUILD_NUMBER}-145885837-gh.circle-artifacts.com/0/app-to-test
+${APP}  https://%{BUILD_NUMBER}-145885837-gh.circle-artifacts.com/0/app-to-test?circle_token=%{CIRCLE_TOKEN}
 ${HUB}  %{HUB}
 
 *** Test Cases ***
