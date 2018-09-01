@@ -13,7 +13,7 @@ ${BUTTON_EQUALS}    id=com.simplemobiletools.calculator:id/btn_equals
 ${LABEL_RESULT}    id=com.simplemobiletools.calculator:id/result
 
 ${APP}  https://%{BUILD_NUMBER}-145885837-gh.circle-artifacts.com/0/app-to-test
-${HUB}  https://f2f2850c.ngrok.io/wd/hub
+${HUB}  %{HUB}
 
 *** Test Cases ***
 One plus One equals Two
@@ -37,6 +37,8 @@ One plus One equals Two (Improved)
 
 *** Keywords ***
 I open the calculator
+        Log to console  HUB: ${HUB}
+	Log to console  APP: ${APP}
 	Open Application  ${HUB}  platformName=Android  platformVersion=7.0  deviceName=Honor_8_Lite  app=${APP}  automationName=appium  appPackage=com.simplemobiletools.calculator  appActivity=.activities.SplashActivity
 	
 I enter ${first_number} plus ${second_number}
