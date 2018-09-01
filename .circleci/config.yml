@@ -9,11 +9,11 @@ jobs:
             path: calculator-release.apk
             destination: app-to-test
       - run: mkdir -p workspace
-      - run: echo $CIRCLE_BUILD_NUM > workspace/echo-output
+      - run: echo $CIRCLE_BUILD_NUM > workspace/android-build-number
       - persist_to_workspace:
           root: workspace
           paths:
-            - echo-output
+            - android-build-number
   test:
     docker:
       - image: hirvijo/robot:1.1
@@ -23,9 +23,7 @@ jobs:
           at: /tmp/workspace
       - run: 
           name: Read file and set as environment variable BUILD_NUMBER
-          command: |
-            cat /tmp/workspace/echo-output
-            echo 'export BUILD_NUMBER=$(cat /tmp/workspace/echo-output)' >> $BASH_ENV
+          command: echo 'export BUILD_NUMBER=$(cat /tmp/workspace/android-build-number)' >> $BASH_ENV
       - run: 
           name: Run tests
           command: robot -d tmp/report .
