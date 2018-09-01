@@ -9,7 +9,7 @@ jobs:
             path: calculator-release.apk
             destination: app-to-test
       - run: mkdir -p workspace
-      - run: echo $CIRCLE_WORKFLOW_ID > workspace/echo-output
+      - run: echo $CIRCLE_BUILD_NUM > workspace/echo-output
       - persist_to_workspace:
           root: workspace
           paths:
@@ -22,7 +22,11 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: cat /tmp/workspace/echo-output
-      - run: robot -d tmp/report --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
+      - run: 
+          name: run tests
+          command: robot -d tmp/report --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
+          environment:
+            BUILD_NUMBER: 999
       - store_artifacts:
             path: tmp/report
             destination: report
