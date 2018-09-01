@@ -22,7 +22,7 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: 
-          name: Read file and set as environment variable BUILD_NUMBER
+          name: Define environment variable BUILD_NUMBER
           command: echo 'export BUILD_NUMBER=$(cat /tmp/workspace/android-build-number)' >> $BASH_ENV
       - run: 
           name: Run tests
