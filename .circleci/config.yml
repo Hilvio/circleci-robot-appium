@@ -9,7 +9,7 @@ jobs:
             path: calculator-release.apk
             destination: app-to-test
       - run: mkdir -p workspace
-      - run: echo "Hello, world!" > workspace/echo-output
+      - run: echo $CIRCLE_BUILD_URL > workspace/echo-output
       - persist_to_workspace:
           root: workspace
           paths:
@@ -21,12 +21,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: /tmp/workspace
-      - run: |
-          if [[ `cat /tmp/workspace/echo-output` == "Hello, world!" ]]; then
-            echo "It worked!";
-          else
-            echo "Nope!"; exit 1
-          fi
+      - run: cat /tmp/workspace/echo-output
       - run: robot -d tmp/report --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
       - store_artifacts:
             path: tmp/report
