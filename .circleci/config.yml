@@ -22,11 +22,13 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: cat /tmp/workspace/echo-output
+      - run:
+          name: Define Environment Variable at Runtime
+          command: |
+            echo 'export BUILD_NUMBER=$(cat /tmp/workspace/echo-output)' >> $BASH_ENV
       - run: 
           name: run tests
           command: robot -d tmp/report --variable APP:"https://18-145885837-gh.circle-artifacts.com/0/app-to-test" .
-          environment:
-            BUILD_NUMBER: 999
       - store_artifacts:
             path: tmp/report
             destination: report
