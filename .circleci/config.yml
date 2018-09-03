@@ -24,12 +24,12 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            pip install robotframework == 3.0.4
-            pip install robotframework-seleniumlibrary == 3.1.1
-            pip install robotframework-appiumlibrary == 1.4.6
-            pip install robotframework-requests == 0.4.7
-            pip install selenium == 3.14.0
-            pip install requests == 2.19.1
+            pip install robotframework==3.0.4
+            pip install robotframework-seleniumlibrary==3.1.1
+            pip install robotframework-appiumlibrary==1.4.6
+            pip install robotframework-requests==0.4.7
+            pip install selenium==3.14.0
+            pip install requests==2.19.1
       - run: 
           name: Define environment variable BUILD_NUMBER
           command: echo 'export BUILD_NUMBER=$(cat /tmp/workspace/android-build-number)' >> $BASH_ENV
